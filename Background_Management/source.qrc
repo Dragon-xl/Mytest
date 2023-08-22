@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>src/Business module.png</file>
+        <file>src/net.png</file>
+        <file>src/net1.png</file>
+        <file>src/undraw_welcome_cats_thqn.png</file>
+    </qresource>
+    <qresource prefix="/."/>
+</RCC>
