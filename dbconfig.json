@@ -1,0 +1,7 @@
+{
+    "hostname":"192.168.164.131:1521/orcl",
+    "dbname":"",
+    "dbuser":"SECMNG",
+    "dbpasswd":"SECMNG",
+    "dbport":"1521"
+}

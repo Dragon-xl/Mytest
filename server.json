@@ -1,0 +1,9 @@
+{
+    "serverID":"1111",
+    "port":8889,
+    "userDB" :"SECMNG",
+    "pwdDB":"SECMNG",
+    "connStrDB":"127.0.0.1:1521/orcl",
+    "shmkey":"/home/bin",
+    "shmkeynum":10
+}

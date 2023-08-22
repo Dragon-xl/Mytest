@@ -1,0 +1,8 @@
+{
+    "clientID":"0001",
+    "serverID":"1111",
+    "ip":"127.0.0.1",
+    "port":8889,
+    "shmkey":"/usr/local",
+    "shmkeynum": 1
+}

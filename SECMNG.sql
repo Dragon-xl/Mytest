@@ -1,0 +1,229 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : oracl_centos
+ Source Server Type    : Oracle
+ Source Server Version : 110200
+ Source Host           : 192.168.164.131:1521
+ Source Schema         : SECMNG
+
+ Target Server Type    : Oracle
+ Target Server Version : 110200
+ File Encoding         : 65001
+
+ Date: 22/08/2023 14:39:07
+*/
+
+
+-- ----------------------------
+-- Table structure for KEYSN
+-- ----------------------------
+DROP TABLE "SECMNG"."KEYSN";
+CREATE TABLE "SECMNG"."KEYSN" (
+  "IKEYSN" NUMBER(12,0) NOT NULL
+)
+TABLESPACE "TS_SECKEY_ADMIN"
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Table structure for SECKEYINFO
+-- ----------------------------
+DROP TABLE "SECMNG"."SECKEYINFO";
+CREATE TABLE "SECMNG"."SECKEYINFO" (
+  "CLIENTID" CHAR(4 BYTE),
+  "SERVERID" CHAR(4 BYTE),
+  "KEYID" NUMBER(9,0) NOT NULL,
+  "CREATETIME" DATE,
+  "STATE" NUMBER(4,0),
+  "SECKEY" VARCHAR2(512 BYTE)
+)
+TABLESPACE "TS_SECKEY_ADMIN"
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Table structure for SECNODE
+-- ----------------------------
+DROP TABLE "SECMNG"."SECNODE";
+CREATE TABLE "SECMNG"."SECNODE" (
+  "ID" CHAR(4 BYTE) NOT NULL,
+  "NAME" VARCHAR2(128 BYTE) NOT NULL,
+  "NODEDESC" VARCHAR2(512 BYTE),
+  "CREATETIME" DATE,
+  "AUTHCODE" NUMBER(12,0),
+  "STATE" NUMBER(4,0)
+)
+TABLESPACE "TS_SECKEY_ADMIN"
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Table structure for SRVCFG
+-- ----------------------------
+DROP TABLE "SECMNG"."SRVCFG";
+CREATE TABLE "SECMNG"."SRVCFG" (
+  "KEY" VARCHAR2(64 BYTE),
+  "VALUDE" VARCHAR2(128 BYTE)
+)
+TABLESPACE "TS_SECKEY_ADMIN"
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Table structure for TRAN
+-- ----------------------------
+DROP TABLE "SECMNG"."TRAN";
+CREATE TABLE "SECMNG"."TRAN" (
+  "IID" NUMBER(12,0) NOT NULL,
+  "TRAN_OPERATOR" NUMBER,
+  "TRANTIME" DATE,
+  "TRANID" NUMBER(4,0),
+  "TRANDESC" VARCHAR2(512 BYTE)
+)
+TABLESPACE "TS_SECKEY_OP"
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Sequence structure for SEQIID
+-- ----------------------------
+DROP SEQUENCE "SECMNG"."SEQIID";
+CREATE SEQUENCE "SECMNG"."SEQIID" MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 CACHE 20;
+
+-- ----------------------------
+-- Primary Key structure for table KEYSN
+-- ----------------------------
+ALTER TABLE "SECMNG"."KEYSN" ADD CONSTRAINT "SYS_C0010913" PRIMARY KEY ("IKEYSN");
+
+-- ----------------------------
+-- Primary Key structure for table SECKEYINFO
+-- ----------------------------
+ALTER TABLE "SECMNG"."SECKEYINFO" ADD CONSTRAINT "SYS_C0010910" PRIMARY KEY ("KEYID");
+
+-- ----------------------------
+-- Indexes structure for table SECKEYINFO
+-- ----------------------------
+CREATE INDEX "SECMNG"."IX_SECKEYINFO_CLIENTID"
+  ON "SECMNG"."SECKEYINFO" ("CLIENTID" ASC)
+  LOGGING
+  TABLESPACE "TS_SECKEY_ADMIN"
+  VISIBLE
+PCTFREE 10
+INITRANS 2
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+);
+
+-- ----------------------------
+-- Primary Key structure for table SECNODE
+-- ----------------------------
+ALTER TABLE "SECMNG"."SECNODE" ADD CONSTRAINT "SYS_C0010909" PRIMARY KEY ("ID");
+
+-- ----------------------------
+-- Checks structure for table SECNODE
+-- ----------------------------
+ALTER TABLE "SECMNG"."SECNODE" ADD CONSTRAINT "SYS_C0010908" CHECK ("NAME" IS NOT NULL) NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+
+-- ----------------------------
+-- Primary Key structure for table TRAN
+-- ----------------------------
+ALTER TABLE "SECMNG"."TRAN" ADD CONSTRAINT "SYS_C0010914" PRIMARY KEY ("IID");
+
+-- ----------------------------
+-- Indexes structure for table TRAN
+-- ----------------------------
+CREATE INDEX "SECMNG"."IX_TRAN_TRAN_OPERATOR"
+  ON "SECMNG"."TRAN" ("TRAN_OPERATOR" ASC)
+  LOGGING
+  TABLESPACE "TS_SECKEY_OP"
+  VISIBLE
+PCTFREE 10
+INITRANS 2
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+);
+
+-- ----------------------------
+-- Triggers structure for table TRAN
+-- ----------------------------
+CREATE TRIGGER "SECMNG"."SEQIID" BEFORE INSERT ON "SECMNG"."TRAN" REFERENCING OLD AS "OLD" NEW AS "NEW" FOR EACH ROW 
+begin
+    select SECMNG.SEQiID.nextval into :new.iID from dual;
+end;
+/
+
+-- ----------------------------
+-- Foreign Keys structure for table SECKEYINFO
+-- ----------------------------
+ALTER TABLE "SECMNG"."SECKEYINFO" ADD CONSTRAINT "SECMNG_SECKEYNODE_CLIENTID_FK" FOREIGN KEY ("CLIENTID") REFERENCES "SECMNG"."SECNODE" ("ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+ALTER TABLE "SECMNG"."SECKEYINFO" ADD CONSTRAINT "SECMNG_SECKEYNODE_SERVERID_FK" FOREIGN KEY ("SERVERID") REFERENCES "SECMNG"."SECNODE" ("ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
