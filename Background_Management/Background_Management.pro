@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    alternetinfo.cpp \
     databasefuc.cpp \
     dblogin.cpp \
     jsonparse.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     welcomewg.cpp
 
 HEADERS += \
+    alternetinfo.h \
     databasefuc.h \
     dblogin.h \
     jsonparse.h \
@@ -24,6 +26,7 @@ HEADERS += \
     welcomewg.h
 
 FORMS += \
+    alternetinfo.ui \
     dblogin.ui \
     mainwindow.ui
 

@@ -222,7 +222,7 @@
          <string>数据库地址：</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="lineEdit_dbaddr">
         <property name="geometry">
          <rect>
           <x>111</x>
@@ -238,7 +238,7 @@
          <enum>QLineEdit::Normal</enum>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_9">
+       <widget class="QLineEdit" name="lineEdit_dbname">
         <property name="geometry">
          <rect>
           <x>111</x>
@@ -269,7 +269,7 @@
          <string>数据库名：</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_10">
+       <widget class="QLineEdit" name="lineEdit_port">
         <property name="geometry">
          <rect>
           <x>111</x>
@@ -300,7 +300,7 @@
          <string>数据库端口：</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_11">
+       <widget class="QLineEdit" name="lineEdit_usrname">
         <property name="geometry">
          <rect>
           <x>111</x>
@@ -331,7 +331,7 @@
          <string>用户名：</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_12">
+       <widget class="QLineEdit" name="lineEdit_usrpwd">
         <property name="geometry">
          <rect>
           <x>111</x>
@@ -363,7 +363,7 @@
         </property>
        </widget>
       </widget>
-      <widget class="QPushButton" name="pushButton_save">
+      <widget class="QPushButton" name="pushButton_dbsave">
        <property name="geometry">
         <rect>
          <x>620</x>
@@ -410,7 +410,7 @@
        </property>
        <layout class="QGridLayout" name="gridLayout">
         <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_18">
+         <widget class="QLineEdit" name="lineEdit_num">
           <property name="text">
            <string/>
           </property>
@@ -432,7 +432,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_19">
+         <widget class="QLineEdit" name="lineEdit_server">
           <property name="text">
            <string/>
           </property>
@@ -454,7 +454,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_17">
+         <widget class="QLineEdit" name="lineEdit_port_2">
           <property name="text">
            <string/>
           </property>
@@ -477,7 +477,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="pushButton_save_2">
+      <widget class="QPushButton" name="pushButton_serversave">
        <property name="geometry">
         <rect>
          <x>620</x>
@@ -524,7 +524,7 @@
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_20">
+         <widget class="QLineEdit" name="lineEdit_netnum">
           <property name="text">
            <string/>
           </property>
@@ -546,7 +546,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_21">
+         <widget class="QLineEdit" name="lineEdit_netname">
           <property name="text">
            <string/>
           </property>
@@ -568,7 +568,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_22">
+         <widget class="QLineEdit" name="lineEdit_netid">
           <property name="text">
            <string/>
           </property>
@@ -591,7 +591,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="pushButton_save_3">
+      <widget class="QPushButton" name="pushButton_rootsave">
        <property name="geometry">
         <rect>
          <x>620</x>
@@ -713,7 +713,7 @@
        <property name="title">
         <string>时间查询</string>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>200</x>
@@ -744,6 +744,19 @@
           <widget class="QDateTimeEdit" name="dateTimeEdit_end"/>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="pushButton_search_time">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>30</y>
+          <width>111</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>查询</string>
+        </property>
        </widget>
       </widget>
       <widget class="QGroupBox" name="groupBox_7">
@@ -809,7 +822,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_search">
+       <widget class="QPushButton" name="pushButton_search_net">
         <property name="geometry">
          <rect>
           <x>530</x>
@@ -826,7 +839,7 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
